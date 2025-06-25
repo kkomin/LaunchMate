@@ -12,7 +12,7 @@ public class OrderController {
         int total = 0;
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\n===== ✅ 선택하신 메뉴는 다음과 같습니다. =====\n");
+        System.out.println("\n===== ✅ 다음과 같이 주문합니다. =====\n");
         for(OrderItem item : orderList) {
             System.out.printf("%-10s \t %2d 개 \t %,10d\n", item.getMenu().getName(), item.getCount(), item.totalPrice());
             total += item.totalPrice();
