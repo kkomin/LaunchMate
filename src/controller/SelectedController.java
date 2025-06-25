@@ -1,37 +1,50 @@
 package controller;
 
 import model.Menu;
+import model.OrderItem;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class SelectedController {
-    public static void select(List menuList) {
+    public static List<OrderItem> select(List<Menu> menuList) {
         Scanner sc = new Scanner(System.in);
         boolean check = true;
 
-        String menus = "";
-        int count = 0;
+        // 선택한 아이템들 저장 용도
+        List<OrderItem> orderList = new ArrayList<>();
 
         while(check) {
             System.out.println("\n메뉴를 선택하세요. (선택 완료 시 0 입력)");
             int selectMenu = sc.nextInt();
-            Menu selected = findMenuById(menuList, selectMenu);
 
             if(selectMenu == 0) {
-                System.out.printf("%s\t%d개\n", menus, count);
+                if(orderList.isEmpty()) {
+                    System.out.println("아직 선택한 메뉴가 없습니다.");
+                } else {
+                    System.out.println("\n[주문 내역]");
+                    for(OrderItem item : orderList) {
+                        System.out.printf("%-15s \t %2d 개\n", item.getMenu().getName(), item.getCount());
+                    }
+                }
                 break;
             }
 
+            Menu selected = findMenuById(menuList, selectMenu);
+
             System.out.println("\n수량을 입력하세요.");
             int selectNum = sc.nextInt();
-
-            menus = selected.getName();
-            count = selectNum;
-
-            // 가장 마지막으로 추가한 아이템만 나오는 문제 발생
+            if(selectNum <= 0) {
+                System.out.println("1개 이상이어야 합니다.\n");
+                continue;
+            }
+            orderList.add(new OrderItem(selected, selectNum));
         }
+
+        return orderList;
     }
+
     private static Menu findMenuById(List<Menu> menuList, int id) {
         for(Menu menu : menuList) {
             if(id == menu.getId()) {
