@@ -1,9 +1,5 @@
 package controller;
 
-import data.MomFoodData;
-import model.Menu;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class OrderController {
@@ -17,7 +13,7 @@ public class OrderController {
 
         System.out.print("입력 : ");
         int num = sc.nextInt();
-        String title = "";
+        String title;
 
         switch(num) {
             case 1 :
