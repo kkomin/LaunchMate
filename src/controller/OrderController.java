@@ -21,7 +21,6 @@ public class OrderController {
 
         String title;
         List<Menu> menuList = null;
-        boolean check = true;
 
         switch(num) {
             case 1 :
@@ -43,36 +42,7 @@ public class OrderController {
             System.out.printf("%-3d %-15s %,6d원\n", menu.getId(), menu.getName(), menu.getPrice());
         }
 
-        String menus = "";
-        int count = 0;
-
-        while(check) {
-            System.out.println("\n메뉴를 선택하세요. (선택 완료 시 0 입력)");
-            int selectMenu = sc.nextInt();
-            Menu selected = findMenuById(menuList, selectMenu);
-
-            if(selectMenu == 0) {
-                System.out.printf("%s\t%d개\n", menus, count);
-                break;
-            }
-
-            System.out.println("\n수량을 입력하세요.");
-            int selectNum = sc.nextInt();
-
-            menus = selected.getName();
-            count = selectNum;
-            
-            // 가장 마지막으로 추가한 아이템만 나오는 문제 발생
-        }
-
-    }
-
-    private static Menu findMenuById(List<Menu> menuList, int id) {
-        for(Menu menu : menuList) {
-            if(id == menu.getId()) {
-                return menu;
-            }
-        }
-        return null;
+        // 메뉴 선택
+        SelectedController.select(menuList);
     }
 }
