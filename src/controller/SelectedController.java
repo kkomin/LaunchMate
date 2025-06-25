@@ -10,18 +10,25 @@ import java.util.Scanner;
 public class SelectedController {
     public static List<OrderItem> select(List<Menu> menuList) {
         Scanner sc = new Scanner(System.in);
-        boolean check = true;
 
-        // 선택한 아이템들 저장 용도
+        // 선택한 아이템들 저장
         List<OrderItem> orderList = new ArrayList<>();
 
-        while(check) {
+        while(true) {
             System.out.println("\n메뉴를 선택하세요. (선택 완료 시 0 입력)");
-            int selectMenu = sc.nextInt();
+            int selectMenu;
+
+            try {
+                selectMenu = sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("\n[❗ ERROR ❗] 숫자를 입력하세요\n");
+                continue;
+            }
 
             if(selectMenu == 0) {
                 if(orderList.isEmpty()) {
                     System.out.println("아직 선택한 메뉴가 없습니다.");
+                    continue;
                 } else {
                     System.out.println("\n[주문 내역]");
                     for(OrderItem item : orderList) {
@@ -32,6 +39,10 @@ public class SelectedController {
             }
 
             Menu selected = findMenuById(menuList, selectMenu);
+            if(selected == null) {
+                System.out.println("메뉴가 존재하지 않습니다.\n");
+                continue;
+            }
 
             System.out.println("\n수량을 입력하세요.");
             int selectNum = sc.nextInt();

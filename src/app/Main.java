@@ -1,9 +1,9 @@
 package app;
 
-import controller.OrderController;
+import controller.MainController;
 
 public class Main {
     public static void main(String[] args) {
-        OrderController.start();
+        MainController.start();
     }
 }
