@@ -17,6 +17,7 @@ public class MainController {
             System.out.println("1. 엄마의 밥상");
             System.out.println("2. 부리또리");
             System.out.println("3. 고향촌 칼국수\n");
+            System.out.println("4. 종료\n");
 
             System.out.print("입력 : ");
             int num = 0;
@@ -46,13 +47,16 @@ public class MainController {
                     title = "고향촌 칼국수";
                     // KalguksuMenu 구현
                     break;
+                case 4 :
+                    System.out.println("프로그램 종료");
+                    return;
                 default :
                     System.out.println("\n[💢WARNING💢] 1 ~ 3 사이의 숫자 입력\n");
                     continue;
             }
 
             // 메뉴 데이터가 없는 경우
-            if (menuList.isEmpty()) {
+            if (menuList == null || menuList.isEmpty()) {
                 System.out.println("\n💦 메뉴 준비중 ... \n");
                 continue;
             }
