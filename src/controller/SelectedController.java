@@ -50,7 +50,7 @@ public class SelectedController {
                     switch(goOrder) {
                         case 1 :
                         // 주문하기
-                        OrderController.order();
+                        OrderController.order(orderList);
                         break;
                         case 2 :
                             continue;
