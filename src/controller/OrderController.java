@@ -41,6 +41,7 @@ public class OrderController {
                     System.out.println("❌ 결재 처리 중 문제가 발생했습니다.");
                 }
                 System.out.println("\n🎉 결재가 완료되었습니다.");
+                DeliveryController.deliver();
                 break;
             case 2:
                 System.out.println("결재를 취소합니다.");
