@@ -34,6 +34,31 @@ public class SelectedController {
                     for(OrderItem item : orderList) {
                         System.out.printf("%-15s \t %2d 개\n", item.getMenu().getName(), item.getCount());
                     }
+                    System.out.println("이대로 주문 하시겠습니까?");
+                    System.out.println("예(1) / 아니요 (2) / 주문취소 (3)");
+                    System.out.print("입력 : ");
+                    int goOrder;
+
+                    try {
+                        goOrder = sc.nextInt();
+                    } catch (Exception e) {
+                        System.out.println("\n[❗ ERROR ❗] 숫자를 입력하세요\n");
+                        continue;
+                    }
+
+                    switch(goOrder) {
+                        case 1 :
+                        // 주문하기
+                        OrderController.order();
+                        break;
+                        case 2 :
+                            continue;
+                        case 3:
+                            MainController.start();
+                        default :
+                            System.out.println("잘못 입력하셨습니다.");
+                            continue;
+                    }
                 }
                 break;
             }
@@ -52,7 +77,6 @@ public class SelectedController {
             }
             orderList.add(new OrderItem(selected, selectNum));
         }
-
         return orderList;
     }
 
