@@ -12,8 +12,4 @@ public class CurrentUser {
         return currentUser;
     }
 
-    public static void clear() {
-        currentUser = null;
-    }
-
 }
