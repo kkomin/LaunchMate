@@ -21,9 +21,17 @@ public class DeliveryController {
 
         // 단계 수 설정 ( 배달 시간이 길면 5단계, 짧으면 10단계)
         int step = (deliveryTime < 30000) ? 5 : 10;
+        int interval = deliveryTime / step;
 
         // 배달 시물레이션
         for(int i = 1; i <= step; i++) {
+            // 시간 설정
+            try {
+                Thread.sleep(interval);
+            } catch (InterruptedException e) {
+                System.out.println("⚠️ 배달 중 문제가 발생했습니다.");
+            }
+
             int percent = i * 100 / step;
             int remainDistance = distance - (distance * i / step);
 
@@ -34,7 +42,7 @@ public class DeliveryController {
                     arrow + space, percent, remainDistance);
         }
         // 배달 완료 메세지
-        System.out.println("\uD83C\uDF5D LAUNCHMATE");
+        System.out.println("\n\uD83C\uDF5D LAUNCHMATE");
         System.out.println("🏠 배달이 완료되었습니다. 맛있게 드세요!");
 
         // 배달 시간이 30초 이상일 경우
