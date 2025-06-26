@@ -4,7 +4,6 @@ import data.KalguksuMenu;
 import data.MomFoodData;
 import model.CurrentUser;
 import model.Menu;
-import model.User;
 
 import java.util.List;
 import java.util.Objects;
