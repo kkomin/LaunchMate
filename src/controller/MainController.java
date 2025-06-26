@@ -1,5 +1,6 @@
 package controller;
 
+import login.SignIn;
 import login.SignUp;
 
 import java.util.Scanner;
@@ -27,6 +28,7 @@ public class MainController {
             switch(input) {
                 case 1 :
                     // 로그인
+                    SignIn.login();
                     break;
                 case 2 :
                     // 회원가입
