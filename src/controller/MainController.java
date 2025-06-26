@@ -1,5 +1,6 @@
 package controller;
 
+import data.KalguksuMenu;
 import data.MomFoodData;
 import model.Menu;
 
@@ -46,6 +47,7 @@ public class MainController {
                 case 3:
                     title = "고향촌 칼국수";
                     // KalguksuMenu 구현
+                    menuList = KalguksuMenu.getKalguksuMenu();
                     break;
                 case 4 :
                     System.out.println("프로그램 종료");
