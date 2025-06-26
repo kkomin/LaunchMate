@@ -13,9 +13,9 @@ public class MainController {
             System.out.println("1. 로그인");
             System.out.println("2. 회원가입");
             System.out.println("3. 탈퇴하기");
-            System.out.println("4. 프로그램 종료");
+            System.out.println("\n4. 프로그램 종료");
 
-            System.out.print("입력 : ");
+            System.out.print("\n입력 : ");
             int input = 0;
 
             try {
@@ -34,6 +34,8 @@ public class MainController {
                     break;
                 case 3 :
                     // 탈퇴하기
+                    break;
+                case 4 :
                     break;
                 default:
                     System.out.println("다시 입력하세요.");
