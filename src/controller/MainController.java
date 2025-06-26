@@ -38,6 +38,7 @@ public class MainController {
                     // 탈퇴하기
                     break;
                 case 4 :
+                    // 프로그램 종료
                     break;
                 default:
                     System.out.println("다시 입력하세요.");

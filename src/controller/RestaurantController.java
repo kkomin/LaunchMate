@@ -2,7 +2,9 @@ package controller;
 
 import data.KalguksuMenu;
 import data.MomFoodData;
+import model.CurrentUser;
 import model.Menu;
+import model.User;
 
 import java.util.List;
 import java.util.Objects;
@@ -12,13 +14,18 @@ public class RestaurantController {
     public static void restaurant() {
         Scanner sc = new Scanner(System.in);
 
+
         while(true) {
+            String user = CurrentUser.getUser().getId();
+            System.out.println("=============================================================");
+            System.out.printf("%s 님 환영합니다! ", user);
             System.out.println("언제나 점심을 책임지는 \uD83C\uDF5D LAUNCHMATE 입니다.\n");
             System.out.println("원하시는 음식점을 선택해주세요.\n");
             System.out.println("1. 엄마의 밥상");
             System.out.println("2. 부리또리");
             System.out.println("3. 고향촌 칼국수\n");
-            System.out.println("4. 종료\n");
+            System.out.println("4. 종료");
+            System.out.println("=============================================================");
 
             System.out.print("입력 : ");
             int num;
