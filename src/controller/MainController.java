@@ -30,6 +30,7 @@ public class MainController {
                     break;
                 case 2 :
                     // 회원가입
+                    SignUp.signUp();
                     break;
                 case 3 :
                     // 탈퇴하기
