@@ -13,7 +13,7 @@ public class RestaurantController {
         Scanner sc = new Scanner(System.in);
 
         while(true) {
-            System.out.println("언제나 점심을 책임지는 \uD83C\uDF5D LAUNCHMATE 입니다.");
+            System.out.println("언제나 점심을 책임지는 \uD83C\uDF5D LAUNCHMATE 입니다.\n");
             System.out.println("원하시는 음식점을 선택해주세요.\n");
             System.out.println("1. 엄마의 밥상");
             System.out.println("2. 부리또리");
