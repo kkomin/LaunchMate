@@ -37,7 +37,8 @@ public class OrderController {
                 // 5초 대기 - thread.sleep
 
                 try {
-                    Thread.sleep(5000);
+                    // 5초 -> 3초
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     System.out.println("❌ 결제 처리 중 문제가 발생했습니다.");
                 }
