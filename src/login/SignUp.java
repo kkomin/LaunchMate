@@ -7,7 +7,7 @@ import model.User;
 import java.util.Scanner;
 
 public class SignUp {
-    public static void start() {
+    public static void signup() {
         Scanner sc = new Scanner(System.in);
 
         while(true) {
