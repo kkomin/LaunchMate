@@ -33,6 +33,10 @@ public class SignUp {
             System.out.print("비밀번호 : ");
             String pw = sc.nextLine();
 
+            // 사용자 추가
+            User newUser = new User(name, id, pw);
+            UserData.userList.add(newUser);
+
             System.out.println("✅ 회원가입이 완료되었습니다!");
             break;
         }
