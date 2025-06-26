@@ -1,5 +1,6 @@
 package controller;
 
+import login.Delete;
 import login.SignIn;
 import login.SignUp;
 
@@ -36,6 +37,7 @@ public class MainController {
                     break;
                 case 3 :
                     // 탈퇴하기
+                    Delete.delete();
                     break;
                 case 4 :
                     // 프로그램 종료

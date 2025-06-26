@@ -13,7 +13,6 @@ public class RestaurantController {
     public static void restaurant() {
         Scanner sc = new Scanner(System.in);
 
-
         while(true) {
             String user = CurrentUser.getUser().getId();
             System.out.println("=============================================================");
