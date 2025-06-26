@@ -16,7 +16,27 @@ public class DeliveryController {
         int deliveryTime = getRandomDelivery();
         int distance = 1300;    // 1.3km
 
-        System.out.println(deliveryTime / 1000 + "초");
+        // 예상 시간
+        System.out.printf("예상 시간 : %d 초\n",deliveryTime / 1000);
+
+        // 단계 수 설정 ( 배달 시간이 길면 5단계, 짧으면 10단계)
+        int step = (deliveryTime < 30000) ? 5 : 10;
+
+        // 배달 시물레이션
+        for(int i = 1; i <= step; i++) {
+            int percent = i * 100 / step;
+            int remainDistance = distance - (distance * i / step);
+
+            String arrow = "➡\uFE0F".repeat(i);
+            String space = "-".repeat(step - i);
+
+            System.out.printf("[%-" + step + "s] %d%% (%dm 남음)\n",
+                    arrow + space, percent, remainDistance);
+        }
+        // 배달 완료 메세지
+        System.out.println("\uD83C\uDF5D LAUNCHMATE");
+        System.out.println("🏠 배달이 완료되었습니다. 맛있게 드세요!");
+
         // 배달 시간이 30초 이상일 경우
         if(deliveryTime >= 30000) {
             System.out.println("\uD83C\uDF27\uFE0F 현재 폭우로 인해 기사님이 안전운전 중이에요!");
