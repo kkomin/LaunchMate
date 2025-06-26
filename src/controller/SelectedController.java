@@ -56,7 +56,7 @@ public class SelectedController {
                         case 2 :
                             continue;
                         case 3:
-                            MainController.start();
+                            RestaurantController.restaurant();
                         default :
                             System.out.println("⚠️ 잘못 입력하셨습니다.");
                             continue;
