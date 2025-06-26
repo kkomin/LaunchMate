@@ -42,7 +42,7 @@ public class MainController {
                     break;
                 case 2:
                     title = "부리또리";
-                    // BurittoMenu 구현
+                    // 메뉴 존재하지 않은 경우를 보여주기 위함
                     break;
                 case 3:
                     title = "고향촌 칼국수";
