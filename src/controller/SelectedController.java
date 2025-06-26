@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SelectedController {
-    public static List<OrderItem> select(List<Menu> menuList) {
+    public static void select(List<Menu> menuList) {
         Scanner sc = new Scanner(System.in);
 
         // 선택한 아이템들 저장
@@ -21,7 +21,8 @@ public class SelectedController {
             try {
                 selectMenu = sc.nextInt();
             } catch (Exception e) {
-                System.out.println("\n[❗ ERROR ❗] 숫자를 입력하세요\n");
+                System.out.println("\n❗ 숫자를 입력하세요\n");
+                sc.nextLine();
                 continue;
             }
 
@@ -43,7 +44,7 @@ public class SelectedController {
                     try {
                         goOrder = sc.nextInt();
                     } catch (Exception e) {
-                        System.out.println("\n[❗ ERROR ❗] 숫자를 입력하세요\n");
+                        System.out.println("\n⚠️ 숫자를 입력하세요\n");
                         continue;
                     }
 
@@ -57,7 +58,7 @@ public class SelectedController {
                         case 3:
                             MainController.start();
                         default :
-                            System.out.println("잘못 입력하셨습니다.");
+                            System.out.println("⚠️ 잘못 입력하셨습니다.");
                             continue;
                     }
                 }
@@ -66,14 +67,14 @@ public class SelectedController {
 
             Menu selected = findMenuById(menuList, selectMenu);
             if(selected == null) {
-                System.out.println("메뉴가 존재하지 않습니다.\n");
+                System.out.println("❓ 메뉴가 존재하지 않습니다.\n");
                 continue;
             }
 
             System.out.println("\n수량을 입력하세요.");
             int selectNum = sc.nextInt();
             if(selectNum <= 0) {
-                System.out.println("1개 이상이어야 합니다.\n");
+                System.out.println("⚠️ 1개 이상이어야 합니다.\n");
                 continue;
             }
 
@@ -93,7 +94,6 @@ public class SelectedController {
                 orderList.add(new OrderItem(selected, selectNum));
             }
         }
-        return orderList;
     }
 
     private static Menu findMenuById(List<Menu> menuList, int id) {

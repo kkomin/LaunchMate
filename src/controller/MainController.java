@@ -1,5 +1,6 @@
 package controller;
 
+import data.KalguksuMenu;
 import data.MomFoodData;
 import model.Menu;
 
@@ -20,18 +21,18 @@ public class MainController {
             System.out.println("4. 종료\n");
 
             System.out.print("입력 : ");
-            int num = 0;
+            int num;
 
             // 숫자 이외의 경우 예외처리
             try {
                 num = sc.nextInt();
             } catch (Exception e) {
-                System.out.println("\n[❗ ERROR ❗] 숫자를 입력하세요\n");
+                System.out.println("\n❗ 숫자를 입력하세요\n");
                 sc.nextLine();
                 continue;
             }
 
-            String title = "";
+            String title;
             List<Menu> menuList = null;
 
             switch(num) {
@@ -41,17 +42,18 @@ public class MainController {
                     break;
                 case 2:
                     title = "부리또리";
-                    // BurittoMenu 구현
+                    // 메뉴 존재하지 않은 경우를 보여주기 위함
                     break;
                 case 3:
                     title = "고향촌 칼국수";
                     // KalguksuMenu 구현
+                    menuList = KalguksuMenu.getKalguksuMenu();
                     break;
                 case 4 :
                     System.out.println("프로그램 종료");
                     return;
                 default :
-                    System.out.println("\n[💢WARNING💢] 1 ~ 3 사이의 숫자 입력\n");
+                    System.out.println("\n⚠️ 1 ~ 3 사이의 숫자 입력\n");
                     continue;
             }
 

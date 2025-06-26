@@ -18,8 +18,8 @@ public class OrderController {
             total += item.totalPrice();
         }
 
-        System.out.println("\n총 금액 : " + total);
-        System.out.println("\n결재 하시겠습니까?");
+        System.out.printf("\n총 금액 : %,d원\n", total);
+        System.out.println("\n결제 하시겠습니까?");
         System.out.println("예(1) / 아니요(2)");
         System.out.print("\n입력 : ");
 
@@ -27,23 +27,26 @@ public class OrderController {
         try {
             pay = sc.nextInt();
         } catch (Exception e) {
-            System.out.println("숫자만 입력해주세요.");
+            System.out.println("⚠️ 숫자만 입력해주세요.");
+            sc.nextLine();
         }
 
         switch(pay) {
             case 1:
-                System.out.println("\n결재중 ...");
+                System.out.println("\n결제중 ...");
                 // 5초 대기 - thread.sleep
 
                 try {
-                    Thread.sleep(5000);
+                    // 5초 -> 3초
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
-                    System.out.println("❌ 결재 처리 중 문제가 발생했습니다.");
+                    System.out.println("❌ 결제 처리 중 문제가 발생했습니다.");
                 }
-                System.out.println("\n🎉 결재가 완료되었습니다.");
+                System.out.println("\n🎉 결제가 완료되었습니다.\n");
+                DeliveryController.deliver();
                 break;
             case 2:
-                System.out.println("결재를 취소합니다.");
+                System.out.println("❌ 결제를 취소합니다.");
                 break;
         }
 
