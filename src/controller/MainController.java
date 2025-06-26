@@ -20,7 +20,7 @@ public class MainController {
             System.out.println("4. 종료\n");
 
             System.out.print("입력 : ");
-            int num = 0;
+            int num;
 
             // 숫자 이외의 경우 예외처리
             try {
@@ -31,7 +31,7 @@ public class MainController {
                 continue;
             }
 
-            String title = "";
+            String title;
             List<Menu> menuList = null;
 
             switch(num) {

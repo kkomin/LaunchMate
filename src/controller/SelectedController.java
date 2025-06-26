@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SelectedController {
-    public static List<OrderItem> select(List<Menu> menuList) {
+    public static void select(List<Menu> menuList) {
         Scanner sc = new Scanner(System.in);
 
         // 선택한 아이템들 저장
@@ -94,7 +94,6 @@ public class SelectedController {
                 orderList.add(new OrderItem(selected, selectNum));
             }
         }
-        return orderList;
     }
 
     private static Menu findMenuById(List<Menu> menuList, int id) {
