@@ -13,7 +13,7 @@ public class DeliveryController {
         System.out.println("📦 배달을 시작합니다.");
 
         // 10초 ~ 2분 사이로 걸리는 시간 (deliveryTime), 거리(distance)
-        int deliveryTime = getRnadomDelivery();
+        int deliveryTime = getRandomDelivery();
         int distance = 1300;    // 1.3km
 
         System.out.println(deliveryTime / 1000 + "초");
@@ -27,7 +27,7 @@ public class DeliveryController {
         }
     }
     // 배달 시간 랜덤 설정
-    private static int getRnadomDelivery() {
+    private static int getRandomDelivery() {
         // random() * (최댓값 - 최솟값 + 1)) + 최솟값
         return (int) (Math.random() * (60000 - 10000 + 1) + 10000);
     }
