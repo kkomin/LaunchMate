@@ -26,7 +26,7 @@ public class MainController {
             try {
                 num = sc.nextInt();
             } catch (Exception e) {
-                System.out.println("\n[❗ ERROR ❗] 숫자를 입력하세요\n");
+                System.out.println("\n❗ 숫자를 입력하세요\n");
                 sc.nextLine();
                 continue;
             }
@@ -51,7 +51,7 @@ public class MainController {
                     System.out.println("프로그램 종료");
                     return;
                 default :
-                    System.out.println("\n[💢WARNING💢] 1 ~ 3 사이의 숫자 입력\n");
+                    System.out.println("\n⚠️ 1 ~ 3 사이의 숫자 입력\n");
                     continue;
             }
 

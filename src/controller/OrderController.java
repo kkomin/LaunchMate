@@ -27,7 +27,8 @@ public class OrderController {
         try {
             pay = sc.nextInt();
         } catch (Exception e) {
-            System.out.println("숫자만 입력해주세요.");
+            System.out.println("⚠️ 숫자만 입력해주세요.");
+            sc.nextLine();
         }
 
         switch(pay) {
@@ -40,11 +41,11 @@ public class OrderController {
                 } catch (InterruptedException e) {
                     System.out.println("❌ 결재 처리 중 문제가 발생했습니다.");
                 }
-                System.out.println("\n🎉 결재가 완료되었습니다.");
+                System.out.println("\n🎉 결재가 완료되었습니다.\n");
                 DeliveryController.deliver();
                 break;
             case 2:
-                System.out.println("결재를 취소합니다.");
+                System.out.println("❌ 결재를 취소합니다.");
                 break;
         }
 
