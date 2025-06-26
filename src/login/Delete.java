@@ -5,7 +5,6 @@ import data.UserData;
 import model.CurrentUser;
 import model.User;
 
-import java.util.Iterator;
 import java.util.Scanner;
 
 // 탈퇴하기
