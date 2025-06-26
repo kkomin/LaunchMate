@@ -1,5 +1,7 @@
 package login;
 
+import controller.MainController;
+
 import java.util.Scanner;
 
 public class SignUp {
@@ -14,5 +16,8 @@ public class SignUp {
 
         System.out.print("비밀번호 : ");
         String pw = sc.nextLine();
+
+        System.out.println("✅ 회원가입이 완료되었습니다!");
+        MainController.start();
     }
 }
