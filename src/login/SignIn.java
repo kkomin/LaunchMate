@@ -3,6 +3,7 @@ package login;
 import controller.MainController;
 import controller.RestaurantController;
 import data.UserData;
+import model.CurrentUser;
 import model.User;
 
 import java.util.Objects;
@@ -39,7 +40,8 @@ public class SignIn {
                     System.out.println("❌ 비밀번호가 일치하지 않습니다.\n");
                     continue;
                 }
-                System.out.printf("✅ %s님 환영합니다. ", foundUser.getId());
+
+                CurrentUser.setUser(foundUser);
                 RestaurantController.restaurant();
                 break;
             }
