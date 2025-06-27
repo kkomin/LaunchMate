@@ -8,7 +8,7 @@ import java.util.List;
 public class KalguksuData {
     public static List<Menu> getKalguksuMenu() {
         List<Menu> menuList = new ArrayList<>();
-        menuList.add(new Menu(1, "얼큰이 칼국수", 8500));
+        menuList.add(new Menu(1, "들깨 칼국수", 8500));
         menuList.add(new Menu(2, "얼큰이 칼국수", 9000));
         menuList.add(new Menu(3, "얼음 메밀국수", 8500));
         menuList.add(new Menu(4, "비빔 막국수", 8500));
