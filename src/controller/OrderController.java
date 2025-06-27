@@ -12,13 +12,14 @@ public class OrderController {
         int total = 0;
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("\n===== ✅ 다음과 같이 주문합니다. =====\n");
+        System.out.println("\n======= ✅ 다음과 같이 주문합니다. =======\n");
         for(OrderItem item : orderList) {
             System.out.printf("%-10s \t %2d 개 \t %,10d\n", item.getMenu().getName(), item.getCount(), item.totalPrice());
             total += item.totalPrice();
         }
 
         System.out.printf("\n총 금액 : %,d원\n", total);
+        System.out.println("\n======================================");
         System.out.println("\n결제 하시겠습니까?");
         System.out.println("예(1) / 아니요(2)");
         System.out.print("\n입력 : ");

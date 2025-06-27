@@ -16,7 +16,10 @@ public class DeliveryController {
 
         // 10초 ~ 2분 사이로 걸리는 시간 (deliveryTime), 거리(distance)
         int deliveryTime = getRandomDelivery();
-        int distance = 1300;    // 1.3km
+        int distance = getRandomDistance();    // 1.3km
+
+        // 거리
+        System.out.printf("총 거리 : %.1f km\n", distance / 1000.0);
 
         // 예상 시간
         System.out.printf("예상 시간 : %d 초\n",deliveryTime / 1000);
@@ -42,7 +45,7 @@ public class DeliveryController {
         int interval = deliveryTime / step;
 
         // 배달 시물레이션
-        for(int i = 1; i <= step; i++) {
+        for(int i = 0; i <= step; i++) {
             // 시간 설정
             try {
                 Thread.sleep(interval);
@@ -51,21 +54,26 @@ public class DeliveryController {
             }
 
             int percent = i * 100 / step;
-            int remainDistance = distance - (distance * i / step);
+            double remainDistance = (distance - (distance * i / (double)step)) / 1000.0;
 
             String arrow = "➡\uFE0F".repeat(i);
             String space = "-".repeat(step - i);
 
-            System.out.printf("[%-" + step + "s] %d%% (%dm 남음)\n",
+            System.out.printf("[%-" + step + "s] %d%% (%.1fkm 남음)\n",
                     arrow + space, percent, remainDistance);
         }
         // 배달 완료 메세지
         System.out.println("\n\uD83C\uDF5D LAUNCHMATE");
         System.out.println("🏠 배달이 완료되었습니다. 맛있게 드세요!");
     }
-    // 배달 시간 랜덤 설정
+    // 배달 시간 랜덤 설정 (10초 ~ 60초 사이의 값 랜덤 출력)
     private static int getRandomDelivery() {
         // random() * (최댓값 - 최솟값 + 1)) + 최솟값
         return (int) (Math.random() * (60000 - 10000 + 1) + 10000);
+    }
+
+    // 배달 거리 랜덤 설정 (800m ~ 1.5km 사이의 값 랜덤 출력)
+    private static int getRandomDistance() {
+        return (int) (Math.random() * (1500 - 800 + 1) + 800);
     }
 }
