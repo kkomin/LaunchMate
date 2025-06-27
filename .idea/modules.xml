@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/launchmate.iml" filepath="$PROJECT_DIR$/launchmate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lunchmate.iml" filepath="$PROJECT_DIR$/lunchmate.iml" />
     </modules>
   </component>
 </project>
