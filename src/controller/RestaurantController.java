@@ -1,6 +1,6 @@
 package controller;
 
-import data.KalguksuMenu;
+import data.KalguksuData;
 import data.MomFoodData;
 import model.CurrentUser;
 import model.Menu;
@@ -52,7 +52,7 @@ public class RestaurantController {
                 case 3:
                     title = "고향촌 칼국수";
                     // KalguksuMenu 구현
-                    menuList = KalguksuMenu.getKalguksuMenu();
+                    menuList = KalguksuData.getKalguksuMenu();
                     break;
                 case 4 :
                     System.out.println("프로그램 종료");

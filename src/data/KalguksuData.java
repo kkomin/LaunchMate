@@ -5,7 +5,7 @@ import model.Menu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KalguksuMenu {
+public class KalguksuData {
     public static List<Menu> getKalguksuMenu() {
         List<Menu> menuList = new ArrayList<>();
         menuList.add(new Menu(1, "얼큰이 칼국수", 8500));
